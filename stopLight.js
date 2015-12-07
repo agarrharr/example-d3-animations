@@ -19,14 +19,12 @@ svg.append('rect')
   width: width
   })
   .style({
-  'fill-opacity': 0,
-  'stroke-width': '1px',
-  stroke: '#333333'
+    fill: '#333333'
   });
 
 update(data);
 
-function update(data) {
+function update(data, tween) {
   var selection = svg.selectAll('circle')
     .data(data);
 
