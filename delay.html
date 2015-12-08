@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="delay"></div>
+		<select id="dataSet">
+			<option value="0">Small Data Set</option>
+			<option value="1">Large Data Set</option>
+		</select><br/>
+		<select id="typeOfDelay">
+			<option value="0">Delay Per Bar</option>
+			<option value="1">Total Delay</option>
+		</select><br/>
+		<p>Delay</p>
+		<input id="delayAmount" type="text"/><br/>
+		<input type="button" value="Draw" onclick="draw()"/>
+		<script src="delay.js"></script>
+	</body>
+</html>
