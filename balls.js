@@ -1,7 +1,6 @@
 var width = 1000;
 var height = 500;
 var radius = 40;
-var rotated = false;
 
 var svg = d3.select('#balls')
   .append('svg')
@@ -31,11 +30,9 @@ function addBall() {
     .attr({
       r: radius,
       cx: function(d) {
-        if (rotated) { return 0; }
         return d;
       },
       cy: function(d) {
-        if (rotated) { return d; }
         return 0;
       }
     })
@@ -49,26 +46,19 @@ function addBall() {
     .ease('bounce')
     .attr({
       cy: function(d) {
-        if (rotated) {
-          return d;
-        }
         return height - radius;
       },
       cx: function(d) {
-        if (rotated) { return width - radius; }
         return d;
       }
     })
     .each('end', function() {
-      console.log('end');
       var transition = selection.transition()
         .attr({
           cx: function(d) {
-            if (rotated) { return width - radius; }
             return d;
           },
           cy: function(d) {
-            if (rotated) { return d; }
             return height - radius;
           }
         });
@@ -81,12 +71,4 @@ function addBall() {
 
   selection.exit()
     .remove();
-}
-
-function rotate() {
-  rotated = true;
-}
-
-function rotateBack() {
-  rotated = false;
 }
