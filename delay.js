@@ -1,5 +1,5 @@
 var height = 300;
-var width = 500;
+var width = 1500;
 var barWidth = 20;
 var barSpacing = 10;
 
@@ -11,7 +11,7 @@ var svg = d3.select('#delay')
   });
 
 var data1 = [10, 12, 15, 2, 17, 20];
-var data2 = [10, 12, 15, 2, 17, 20, 10, 12, 15, 2, 17, 20, 10, 12, 15, 2, 17, 20, 10, 12, 15, 2, 17, 20];
+var data2 = [10, 12, 15, 2, 17, 20, 10, 12, 15, 2, 17, 20, 10, 12, 15, 2, 17, 20, 10, 12, 15, 2, 17, 20, 10, 12, 15, 2, 17, 20, 10, 12, 15, 2, 17, 20];
 
 function draw() {
   var dataSet = Number(document.getElementById('dataSet').value);
